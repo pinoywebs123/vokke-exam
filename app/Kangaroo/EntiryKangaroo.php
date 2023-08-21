@@ -43,7 +43,7 @@ class EntiryKangaroo {
 				'dob'		=> $data['dob'],
 				'color'		=> $data['color'],
 			]);
-			return back();
+			return redirect()->route('home');
 		}else 
 		{
 			return false;

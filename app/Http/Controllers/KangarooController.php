@@ -35,6 +35,11 @@ class KangarooController extends Controller
     }
     public function update_kangaroo(EditKangarooRequest $request, EntiryKangaroo $kangaroo)
     {
-        return $kangaroo->update($request->all());
+        $check_update =  $kangaroo->update($request->all());
+        if($check_update == false)
+        {
+           return 'You are not allowed, to update other Kangaroo'; 
+        }
+        return $check_update;
     }
 }
